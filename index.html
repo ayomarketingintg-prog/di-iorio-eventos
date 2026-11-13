@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Di Iorio Eventos — Espaço para eventos em São Sebastião do Paraíso</title>
+<meta name="description" content="Salão novo e amplo em São Sebastião do Paraíso (MG) para aniversários, casamentos, festas infantis e confraternizações. Mesas, cadeiras, cozinha industrial, área kids e estacionamento.">
+<meta property="og:title" content="Di Iorio Eventos — Espaço para eventos em São Sebastião do Paraíso">
+<meta property="og:description" content="Salão novo e amplo, com mesas, cadeiras, cozinha industrial, área kids, lounge e estacionamento.">
+<meta property="og:image" content="img/fachada.jpg">
+<meta name="theme-color" content="#0d0b09">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0d0b09; --ink-2:#17140f; --ink-3:#221d16;
+  --cream:#f6f1e8; --cream-2:#ece4d6;
+  --gold:#c9a35b; --gold-2:#e3c78d; --gold-3:#9a7838;
+  --text:#2a241b; --muted:#6f6556; --line:rgba(201,163,91,.28);
+  --wa:#1fa855;
+  --r:6px;
+  --wrap:1200px; --pad:clamp(20px,5vw,56px);
+  --serif:"Cinzel",Georgia,serif; --ital:"Cormorant Garamond",Georgia,serif; --sans:"Manrope",system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--sans);color:var(--text);background:var(--cream);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:12px;top:-60px;background:var(--gold);color:var(--ink);padding:10px 16px;z-index:200;border-radius:var(--r);font-weight:700}
+.skip:focus{top:12px}
+:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px}
+
+/* ---------- type ---------- */
+.eyebrow{font-family:var(--sans);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-3);font-weight:700;display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:34px;height:1px;background:currentColor}
+.dark .eyebrow{color:var(--gold)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:.02em;line-height:1.08;color:var(--ink)}
+.dark h1,.dark h2,.dark h3{color:var(--cream)}
+h2{font-size:clamp(32px,4.4vw,58px);margin:18px 0 22px}
+h2 em,h1 em{font-family:var(--ital);font-style:italic;font-weight:400;letter-spacing:0;color:var(--gold-3);text-transform:none}
+.dark h2 em,.dark h1 em{color:var(--gold-2)}
+.lead{font-size:clamp(17px,1.4vw,19px);color:var(--muted);max-width:56ch}
+.dark .lead{color:#c9bfae}
+
+/* ---------- buttons ---------- */
+.btn{--bg:var(--gold);--fg:var(--ink);display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;background:var(--bg);color:var(--fg);font-weight:700;font-size:15px;letter-spacing:.02em;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .25s var(--ease),background .25s,box-shadow .25s,color .25s}
+.btn:hover{transform:translateY(-2px);background:var(--gold-2);box-shadow:0 10px 28px -10px rgba(201,163,91,.7)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn.ghost{--bg:transparent;--fg:var(--cream);border-color:rgba(246,241,232,.45)}
+.btn.ghost:hover{background:rgba(246,241,232,.1);border-color:var(--gold-2);box-shadow:none}
+.btn.line{--bg:transparent;--fg:var(--ink);border-color:var(--ink)}
+.btn.line:hover{background:var(--ink);color:var(--cream);box-shadow:none}
+.btn svg{width:20px;height:20px;flex:none}
+.link{position:relative;text-decoration:none;font-weight:600}
+.link::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.link:hover::after{transform:scaleX(1)}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .35s,box-shadow .35s,backdrop-filter .35s}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px}
+.nav.solid{background:rgba(13,11,9,.88);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--cream)}
+.mono{width:42px;height:42px;flex:none}
+.brand b{display:block;font-family:var(--serif);font-weight:500;font-size:19px;letter-spacing:.12em;line-height:1}
+.brand small{display:block;font-size:10px;letter-spacing:.42em;color:var(--gold);text-transform:uppercase;margin-top:5px}
+.menu{display:flex;align-items:center;gap:30px;list-style:none}
+.menu a{color:#e8e0d1;font-size:14px;font-weight:600;letter-spacing:.04em}
+.menu .btn{min-height:44px;padding:0 20px;font-size:14px;color:var(--ink)}
+.burger{display:none;width:46px;height:46px;border:1px solid rgba(246,241,232,.3);border-radius:50%;background:transparent;color:var(--cream);cursor:pointer;align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:18px;height:1.5px;background:currentColor;position:relative;transition:.3s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger[aria-expanded=true] span{background:transparent}
+.burger[aria-expanded=true] span::before{top:0;transform:rotate(45deg)}
+.burger[aria-expanded=true] span::after{top:0;transform:rotate(-45deg)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:var(--cream);overflow:hidden;background:var(--ink)}
+.hero-media{position:absolute;inset:0}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:scale(1.08);animation:heroZoom 2.6s var(--ease) forwards}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,11,9,.88) 0%,rgba(13,11,9,.62) 42%,rgba(13,11,9,.12) 78%),linear-gradient(180deg,rgba(13,11,9,.5) 0%,rgba(13,11,9,0) 25%,rgba(13,11,9,0) 60%,rgba(13,11,9,.92) 100%)}
+.hero h1{color:var(--cream)}.hero h1 em{color:var(--gold-2)}.hero .lead{color:#d9cfbd}.hero .eyebrow{color:var(--gold)}
+@media (max-width:720px){.hero::after{background:linear-gradient(180deg,rgba(13,11,9,.55) 0%,rgba(13,11,9,.35) 30%,rgba(13,11,9,.85) 62%,rgba(13,11,9,.97) 100%)}.hero-media img{object-position:38% 40%}}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:clamp(48px,9vh,96px);padding-top:140px}
+.hero h1{font-size:clamp(38px,6.4vw,92px);max-width:13ch;margin:22px 0 22px}
+.hero .lead{max-width:52ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:10px 34px;margin-top:44px;padding-top:26px;border-top:1px solid rgba(246,241,232,.18);font-size:14px;color:#d9cfbd}
+.hero-facts span{display:flex;align-items:center;gap:9px}
+.hero-facts svg{width:18px;height:18px;color:var(--gold)}
+[data-enter]>*{opacity:0;transform:translateY(22px);animation:rise 1s var(--ease) forwards}
+[data-enter]>*:nth-child(2){animation-delay:.12s}
+[data-enter]>*:nth-child(3){animation-delay:.24s}
+[data-enter]>*:nth-child(4){animation-delay:.36s}
+[data-enter]>*:nth-child(5){animation-delay:.48s}
+@keyframes rise{to{opacity:1;transform:none}}
+@keyframes heroZoom{to{transform:scale(1)}}
+
+/* ---------- promo ribbon ---------- */
+.promo{background:linear-gradient(90deg,var(--gold-3),var(--gold) 45%,var(--gold-2));color:var(--ink)}
+.promo .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:22px;padding-bottom:22px;flex-wrap:wrap}
+.promo p{font-weight:600;font-size:16px}
+.promo strong{font-family:var(--serif);font-weight:600;letter-spacing:.06em;margin-right:8px}
+.promo .btn{--bg:var(--ink);--fg:var(--cream);min-height:46px}
+.promo .btn:hover{background:var(--ink-3);box-shadow:none}
+
+/* ---------- sections ---------- */
+section.s{padding:clamp(80px,12vh,140px) 0}
+.dark{background:var(--ink);color:#cfc5b4}
+.dark-2{background:var(--ink-2)}
+.head{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;margin-bottom:56px}
+.head .lead{justify-self:end}
+
+/* o espaço — mosaic */
+.mosaic{display:grid;grid-template-columns:1.6fr 1fr;grid-template-rows:repeat(2,minmax(0,1fr));gap:14px;height:clamp(420px,62vh,640px)}
+.mosaic .ph:first-child{grid-row:1/3}
+.ph{position:relative;overflow:hidden;border-radius:var(--r);background:var(--ink-3);cursor:zoom-in;border:0;padding:0;display:block;width:100%;height:100%}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.ph:hover img{transform:scale(1.03)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;border-top:1px solid var(--line)}
+.stat{padding:28px 28px 0 0}
+.stat+.stat{padding-left:28px;border-left:1px solid var(--line)}
+.stat b{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.6vw,48px);color:var(--ink);line-height:1}
+.stat span{display:block;margin-top:10px;color:var(--muted);font-size:15px}
+
+/* estrutura */
+.grid-feat{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.feat{background:var(--ink);padding:34px 30px 36px;transition:background .35s}
+.feat:hover{background:var(--ink-3)}
+.feat .ic{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--gold);margin-bottom:22px;transition:transform .35s var(--ease),border-color .35s}
+.feat:hover .ic{transform:translateY(-2px);border-color:var(--gold)}
+.feat .ic svg{width:22px;height:22px}
+.feat h3{font-family:var(--sans);font-weight:700;font-size:18px;letter-spacing:0;color:var(--cream);margin-bottom:8px}
+.feat p{font-size:15px;color:#a99f8e;line-height:1.55}
+
+/* ambientes split */
+.amb{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);align-items:center}
+.amb + .amb{margin-top:clamp(70px,10vh,120px)}
+.amb.rev .amb-photo{order:2}
+.amb-photo{aspect-ratio:4/3.4;height:auto}
+.amb ul{list-style:none;margin-top:26px;display:grid;gap:12px}
+.amb li{display:flex;gap:12px;align-items:flex-start;font-size:16px}
+.amb li::before{content:"";width:7px;height:7px;margin-top:9px;transform:rotate(45deg);background:var(--gold);flex:none}
+
+/* eventos */
+.events{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ev{position:relative;border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;text-decoration:none;background:var(--cream);transition:transform .3s var(--ease),box-shadow .3s,border-color .3s;display:flex;flex-direction:column;min-height:190px}
+.ev:hover{transform:translateY(-2px);box-shadow:0 18px 40px -24px rgba(13,11,9,.45);border-color:var(--gold)}
+.ev .num{font-family:var(--serif);color:var(--gold-3);font-size:14px;letter-spacing:.2em}
+.ev h3{font-size:24px;margin:14px 0 8px}
+.ev p{color:var(--muted);font-size:15px}
+.ev .go{margin-top:auto;padding-top:18px;font-size:14px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px}
+.ev .go svg{width:16px;height:16px;transition:transform .3s var(--ease)}
+.ev:hover .go svg{transform:translateX(4px)}
+
+/* depoimento — type moment */
+.quote{text-align:center}
+.quote .mark{font-family:var(--ital);font-size:120px;line-height:.6;color:var(--gold);display:block;height:50px}
+.quote blockquote{font-family:var(--ital);font-style:italic;font-size:clamp(30px,4.2vw,56px);line-height:1.15;color:var(--cream);max-width:20ch;margin:20px auto 30px}
+.quote blockquote .w{opacity:.22;transition:opacity .5s}
+.quote blockquote .w.on{opacity:1}
+.quote cite{font-style:normal;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.quote .sub{display:block;margin-top:8px;color:#a99f8e;font-size:15px;letter-spacing:0;text-transform:none}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:64px}
+.strip .ph{aspect-ratio:1}
+
+/* como funciona + form */
+.book{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,6vw,90px);align-items:start}
+.steps{list-style:none;counter-reset:s;margin-top:34px;display:grid;gap:26px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:54px 1fr;gap:16px}
+.steps li::before{content:counter(s,decimal-leading-zero);font-family:var(--serif);font-size:22px;color:var(--gold-3);border-top:1px solid var(--gold);padding-top:10px}
+.steps b{display:block;font-size:17px;color:var(--ink);margin-bottom:2px}
+.steps span{color:var(--muted);font-size:15px}
+form.card{background:#fff;border:1px solid var(--cream-2);border-radius:var(--r);padding:clamp(24px,4vw,44px);box-shadow:0 30px 60px -40px rgba(13,11,9,.35)}
+form h3{font-size:26px;margin-bottom:6px}
+form .hint{color:var(--muted);font-size:15px;margin-bottom:26px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
+.field label{font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--ink)}
+.field input,.field select,.field textarea{font:inherit;font-size:16px;color:var(--ink);border:1px solid #d9cfbd;border-radius:var(--r);padding:13px 14px;background:var(--cream);min-height:50px;transition:border-color .25s,box-shadow .25s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,163,91,.22)}
+.field textarea{min-height:96px;resize:vertical}
+.field .err{color:#a33a2a;font-size:13px;min-height:0}
+.field.bad input,.field.bad select{border-color:#a33a2a}
+form .btn{width:100%;--bg:var(--wa);--fg:#fff}
+form .btn:hover{background:#178f47;box-shadow:0 10px 28px -12px rgba(31,168,85,.8)}
+form .fine{font-size:13px;color:var(--muted);margin-top:12px;text-align:center}
+
+/* como chegar */
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);align-items:center}
+.addr{font-family:var(--serif);font-size:clamp(28px,3.4vw,46px);line-height:1.15;color:var(--cream);margin:16px 0 18px}
+.addr small{display:block;font-family:var(--sans);font-size:17px;letter-spacing:0;color:#a99f8e;margin-top:14px;line-height:1.5}
+.visit-list{list-style:none;display:grid;gap:14px;margin:28px 0 34px}
+.visit-list li{display:flex;gap:14px;align-items:center;color:#d9cfbd}
+.visit-list svg{width:20px;height:20px;color:var(--gold);flex:none}
+.visit .ph{aspect-ratio:4/3.4;cursor:zoom-in}
+.visit-actions{display:flex;flex-wrap:wrap;gap:12px}
+
+/* footer */
+footer{background:#080706;color:#8f8676;padding:64px 0 110px;font-size:15px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+footer h4{font-family:var(--sans);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:700}
+footer ul{list-style:none;display:grid;gap:10px}
+footer a{color:#d9cfbd;text-decoration:none}
+footer .brand{margin-bottom:18px}
+.legal{grid-column:1/-1;border-top:1px solid #221d16;padding-top:24px;margin-top:10px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px}
+
+/* float whatsapp */
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:90;width:60px;height:60px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(0,0,0,.45);transition:transform .3s var(--ease)}
+.wa-float:hover{transform:translateY(-3px) scale(1.04)}
+.wa-float svg{width:30px;height:30px}
+.wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:ping 2.8s ease-out infinite}
+@keyframes ping{0%{transform:scale(1);opacity:.7}80%,100%{transform:scale(1.6);opacity:0}}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:300;background:rgba(8,7,6,.94);display:none;align-items:center;justify-content:center;padding:60px 70px}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:100%;border-radius:var(--r);box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lb button{position:absolute;width:52px;height:52px;border-radius:50%;border:1px solid rgba(246,241,232,.3);background:rgba(13,11,9,.6);color:var(--cream);cursor:pointer;display:grid;place-items:center;transition:background .25s,border-color .25s}
+.lb button:hover{background:var(--ink-3);border-color:var(--gold)}
+.lb button svg{width:22px;height:22px}
+.lb .x{top:18px;right:18px}.lb .pv{left:14px;top:50%;margin-top:-26px}.lb .nx{right:14px;top:50%;margin-top:-26px}
+
+/* reveal: only the type moment animates on scroll; everything else is static */
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .menu{position:fixed;inset:0;background:var(--ink);flex-direction:column;justify-content:center;gap:26px;transform:translateY(-100%);transition:transform .45s var(--ease)}
+  .menu.open{transform:none}
+  .menu a{font-size:22px;font-family:var(--serif)}
+  .menu .btn{font-family:var(--sans);font-size:16px;min-height:52px}
+  .burger{display:flex;position:relative;z-index:2}
+  .head{grid-template-columns:1fr;gap:0;margin-bottom:40px}
+  .head .lead{justify-self:start}
+  .grid-feat{grid-template-columns:repeat(2,1fr)}
+  .events{grid-template-columns:repeat(2,1fr)}
+  .book,.visit{grid-template-columns:1fr}
+  footer .wrap{grid-template-columns:1fr 1fr}
+  footer .wrap>div:first-child{grid-column:1/-1}
+}
+@media (max-width:720px){
+  body{font-size:16px}
+  .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:auto;height:auto}
+  .mosaic .ph:first-child{grid-column:1/-1;grid-row:auto;aspect-ratio:4/3}
+  .mosaic .ph{aspect-ratio:1}
+  .stats{grid-template-columns:1fr}
+  .stat,.stat+.stat{padding:22px 0;border-left:0;border-bottom:1px solid var(--line)}
+  .grid-feat,.events{grid-template-columns:1fr}
+  .amb{grid-template-columns:1fr}
+  .amb.rev .amb-photo{order:0}
+  .strip{grid-template-columns:1fr 1fr}
+  .row{grid-template-columns:1fr}
+  .hero-actions .btn{width:100%}
+  .promo .btn{width:100%}
+  footer .wrap{grid-template-columns:1fr}
+  .lb{padding:70px 12px}
+  .lb .pv,.lb .nx{top:auto;bottom:16px;margin:0}
+  .lb .pv{left:calc(50% - 62px)}.lb .nx{right:calc(50% - 62px)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  [data-enter]>*{opacity:1;transform:none}
+  .hero-media img{transform:none}
+  .quote blockquote .w{opacity:1}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.85 9.85 0 0 0 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.24 8.24 0 0 1 8.23 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M4 16V12l2-5h12l2 5v4M4 16h16M4 16v2.5M20 16v2.5M3 11h18"/><circle cx="7.5" cy="13.5" r="1" fill="currentColor"/><circle cx="16.5" cy="13.5" r="1" fill="currentColor"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm-6 9c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5M16 4.3a3.5 3.5 0 0 1 0 6.4M18 14.7c1.8.7 3 2.6 3 5.3"/></symbol>
+    <symbol id="i-chair" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M7 3v9M17 3v9M7 6h10M7 9h10M5 12h14v3H5zM6 15v6M18 15v6"/></symbol>
+    <symbol id="i-chef" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M7 14h10v6H7zM7 14a4 4 0 0 1-1.2-7.8A4 4 0 0 1 12 4a4 4 0 0 1 6.2 2.2A4 4 0 0 1 17 14M10 17h4"/></symbol>
+    <symbol id="i-fridge" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M6 3h12v18H6zM6 10h12M9 6v2M9 13v3"/></symbol>
+    <symbol id="i-light" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.8V16h5v-.3c0-.7.4-1.4 1-1.8A6 6 0 0 0 12 3Z"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" d="M4 9h4l5-4v14l-5-4H4zM16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></symbol>
+    <symbol id="i-sofa" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M5 11V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3M3 12a2 2 0 0 1 4 0v2h10v-2a2 2 0 0 1 4 0v5H3zM5 17v2M19 17v2"/></symbol>
+    <symbol id="i-kids" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M4 21V9l4-3 4 3v12M4 13h8M14 21c0-5 2-9 6-11v11M8 21v-4"/></symbol>
+    <symbol id="i-wc" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M7 6.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM17 6.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM5 9h4v6H8v6H6v-6H5zM15 9h4l1.5 6H18v6h-2v-6h-2.5zM12 3v18"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="m3 6 6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M15 5l-7 7 7 7"/></symbol>
+    <symbol id="i-mono" viewBox="0 0 48 48">
+      <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
+        <path d="M14 38C7 33 5 24 9 15"/><path d="M34 38c7-5 9-14 5-23"/>
+        <path d="M9.5 31.5c-2.2-.4-3.6-1.8-4-3.8 2.1.2 3.5 1.3 4 3.8ZM7.3 25.8c-2-.9-3-2.6-2.9-4.6 1.9.7 2.9 2.1 2.9 4.6ZM7.2 19.8c-1.6-1.3-2.2-3.1-1.7-5 1.6 1.1 2.1 2.7 1.7 5ZM38.5 31.5c2.2-.4 3.6-1.8 4-3.8-2.1.2-3.5 1.3-4 3.8ZM40.7 25.8c2-.9 3-2.6 2.9-4.6-1.9.7-2.9 2.1-2.9 4.6ZM40.8 19.8c1.6-1.3 2.2-3.1 1.7-5-1.6 1.1-2.1 2.7-1.7 5Z" fill="currentColor" stroke="none"/>
+      </g>
+      <text x="24" y="31" text-anchor="middle" font-family="Cinzel, Georgia, serif" font-size="19" fill="currentColor">D</text>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#topo" aria-label="Di Iorio Eventos — início">
+      <svg class="mono" style="color:var(--gold)" aria-hidden="true"><use href="#i-mono"/></svg>
+      <span><b>DI IORIO</b><small>Eventos</small></span>
+    </a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span></button>
+    <ul class="menu" id="menu">
+      <li><a class="link" href="#espaco">O espaço</a></li>
+      <li><a class="link" href="#estrutura">Estrutura</a></li>
+      <li><a class="link" href="#eventos">Eventos</a></li>
+      <li><a class="link" href="#chegar">Como chegar</a></li>
+      <li><a class="btn wa-link" href="#orcamento">Consultar data</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="conteudo">
+  <!-- HERO -->
+  <section class="hero" id="topo">
+    <div class="hero-media"><img src="img/fachada.jpg" alt="Fachada da Di Iorio Eventos iluminada ao entardecer, com entrada de vidro e marquise preta" fetchpriority="high"></div>
+    <div class="wrap" data-enter>
+      <p class="eyebrow">São Sebastião do Paraíso · MG</p>
+      <h1>Espaço para eventos <em>em Paraíso</em></h1>
+      <p class="lead">Salão novo e amplo para aniversários, casamentos, festas infantis e confraternizações. Mesas, cadeiras, cozinha industrial e estacionamento já vêm no aluguel.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#orcamento"><svg aria-hidden="true"><use href="#i-cal"/></svg>Consultar minha data</a>
+        <a class="btn ghost" href="#espaco">Conhecer o espaço</a>
+      </div>
+      <div class="hero-facts">
+        <span><svg aria-hidden="true"><use href="#i-car"/></svg>Estacionamento no local</span>
+        <span><svg aria-hidden="true"><use href="#i-kids"/></svg>Área kids com escorregador</span>
+        <span><svg aria-hidden="true"><use href="#i-sofa"/></svg>Lounge privativo</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMO -->
+  <div class="promo" role="region" aria-label="Promoção de inauguração">
+    <div class="wrap">
+      <p><strong>Promoção de inauguração</strong> condições especiais para eventos realizados até dezembro de 2026.</p>
+      <a class="btn wa-link" data-msg="Olá! Quero saber sobre a promoção de inauguração da Di Iorio Eventos." href="https://wa.me/5535991627080">Ver condições no WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- O ESPAÇO -->
+  <section class="s" id="espaco">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="eyebrow">O espaço</p>
+          <h2>Um salão amplo, <em>pronto para virar a sua festa</em></h2>
+        </div>
+        <p class="lead">Pé-direito alto, estrutura metálica aparente e iluminação cênica. O salão aceita do jantar de mesa posta à pista de dança, e você monta a decoração do seu jeito.</p>
+      </div>
+      <div class="mosaic">
+        <button class="ph" data-lb="0" aria-label="Ampliar foto do salão montado com mesas redondas"><img src="img/salao.jpg" alt="Salão principal montado com mesas redondas, toalhas brancas, cadeiras pretas e iluminação rosa" loading="lazy"></button>
+        <button class="ph" data-lb="1" aria-label="Ampliar foto do salão vazio"><img src="img/espaco-vazio.jpg" alt="Salão vazio com piso claro, janelas altas e portão preto" loading="lazy"></button>
+        <button class="ph" data-lb="2" aria-label="Ampliar foto de mesa posta"><img src="img/mesa.jpg" alt="Mesa posta com sousplat, taças de cristal, velas e arranjo de flores" loading="lazy"></button>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>120</b><span>convidadas já recebidas num único evento, com espaço de sobra</span></div>
+        <div class="stat"><b>2026</b><span>espaço inaugurado este ano, com instalações novas</span></div>
+        <div class="stat"><b>9</b><span>itens de estrutura já inclusos no aluguel</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTRUTURA -->
+  <section class="s dark" id="estrutura">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="eyebrow">Estrutura inclusa</p>
+          <h2>Tudo o que a festa precisa <em>já está aqui</em></h2>
+        </div>
+        <p class="lead">Menos coisa para alugar por fora, menos correria no dia. Estes itens fazem parte do espaço.</p>
+      </div>
+      <div class="grid-feat">
+        <div class="feat"><div class="ic"><svg aria-hidden="true"><use href="#i-chair"/></svg></div><h3>Mesas e cadeiras</h3><p>Mesas redondas e cadeiras estilo buffet incluídas no aluguel.</p></div>
+        <div class="feat"><div class="ic"><svg aria-hidden="true"><use href="#i-chef"/></svg></div><h3>Cozinha completa</h3><p>Equipada, com bancada industrial para o buffet trabalhar com conforto.</p></div>
+        <div class="feat"><div class="ic"><svg aria-hidden="true"><use href="#i-fridge"/></svg></div><h3>Área de apoio</h3><p>Balcão em granito e geladeira expositora para servir os convidados.</p></div>
+        <div class="feat"><div class="ic"><svg aria-hidden="true"><use href="#i-light"/></svg></div><h3>Iluminação completa</h3><p>Luz cênica colorida no salão, para jantar ou para pista.</p></div>
+        <div class="feat"><div class="ic"><svg aria-hidden="true"><use href="#i-sound"/></svg></div><h3>Caixa de som</h3><p>Som com alcance para o salão inteiro.</p></div>
+        <div class="feat"><div class="ic"><svg aria-hidden="true"><use href="#i-car"/></svg></div><h3>Estacionamento</h3><p>Vagas no próprio local, sem ninguém procurando lugar na rua.</p></div>
+        <div class="feat"><div class="ic"><svg aria-hidden="true"><use href="#i-wc"/></svg></div><h3>Banheiros modernos</h3><p>Instalações novas, limpas e bem cuidadas.</p></div>
+        <div class="feat"><div class="ic"><svg aria-hidden="true"><use href="#i-sofa"/></svg></div><h3>Lounge privativo</h3><p>Um canto reservado para descanso, apoio ou troca de roupa.</p></div>
+        <div class="feat"><div class="ic"><svg aria-hidden="true"><use href="#i-kids"/></svg></div><h3>Área kids</h3><p>Playground com escorregador e piscina de bolinhas no mezanino.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMBIENTES -->
+  <section class="s" id="ambientes">
+    <div class="wrap">
+      <div class="amb">
+        <button class="ph amb-photo" data-lb="3" aria-label="Ampliar foto da área kids"><img src="img/kids.jpg" alt="Área kids com escorregador tubular rosa e roxo, grama sintética e brinquedos" loading="lazy"></button>
+        <div>
+          <p class="eyebrow">Área kids</p>
+          <h2>As crianças brincam, <em>os pais aproveitam</em></h2>
+          <p class="lead">Um playground só para os pequenos, dentro do salão, à vista dos adultos.</p>
+          <ul>
+            <li>Escorregador tubular, piscina de bolinhas e grama sintética</li>
+            <li>Brinquedos para crianças de até 1,30 m</li>
+            <li>Ideal para festas infantis e eventos em família</li>
+          </ul>
+        </div>
+      </div>
+      <div class="amb rev">
+        <button class="ph amb-photo" data-lb="4" aria-label="Ampliar foto do lounge privativo"><img src="img/lounge.jpg" alt="Lounge privativo com sofá de couro preto e parede escura" loading="lazy"></button>
+        <div>
+          <p class="eyebrow">Lounge privativo</p>
+          <h2>Um canto reservado <em>para quem faz a festa</em></h2>
+          <p class="lead">Sofá, luz baixa e privacidade para os anfitriões, a noiva ou a aniversariante respirarem um pouco durante o evento.</p>
+          <ul>
+            <li>Ambiente reservado, separado do movimento do salão</li>
+            <li>Bom para receber a família, trocar de roupa ou guardar presentes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTOS -->
+  <section class="s" id="eventos" style="background:var(--cream-2)">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="eyebrow">Para que tipo de evento</p>
+          <h2>Um salão, <em>muitas comemorações</em></h2>
+        </div>
+        <p class="lead">Escolha o tipo de evento e já mande sua mensagem pronta no WhatsApp.</p>
+      </div>
+      <div class="events">
+        <a class="ev wa-link" data-msg="Olá! Quero fazer um aniversário na Di Iorio Eventos. Pode me passar valores e datas livres?" href="https://wa.me/5535991627080"><span class="num">01</span><h3>Aniversários</h3><p>Dos 15 anos aos 80, com mesa posta ou pista cheia.</p><span class="go">Pedir orçamento <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="ev wa-link" data-msg="Olá! Estou planejando um casamento e quero conhecer a Di Iorio Eventos." href="https://wa.me/5535991627080"><span class="num">02</span><h3>Casamentos</h3><p>Recepção para a família toda, com cozinha para o buffet.</p><span class="go">Pedir orçamento <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="ev wa-link" data-msg="Olá! Quero fazer uma festa infantil na Di Iorio Eventos." href="https://wa.me/5535991627080"><span class="num">03</span><h3>Festas infantis</h3><p>Área kids dentro do salão, sem precisar alugar brinquedo.</p><span class="go">Pedir orçamento <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="ev wa-link" data-msg="Olá! Quero fazer a confraternização de fim de ano da minha empresa na Di Iorio Eventos." href="https://wa.me/5535991627080"><span class="num">04</span><h3>Confraternizações</h3><p>Feche o ano com a equipe reunida. Dezembro ainda tem datas.</p><span class="go">Pedir orçamento <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="ev wa-link" data-msg="Olá! Quero fazer um evento corporativo na Di Iorio Eventos." href="https://wa.me/5535991627080"><span class="num">05</span><h3>Eventos corporativos</h3><p>Encontros, palestras e jantares de empresa.</p><span class="go">Pedir orçamento <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="ev wa-link" data-msg="Olá! Quero fazer um encontro / chá na Di Iorio Eventos." href="https://wa.me/5535991627080"><span class="num">06</span><h3>Encontros e chás</h3><p>Chás de bebê, encontros de grupo e reuniões de família.</p><span class="go">Pedir orçamento <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTO (type moment) -->
+  <section class="s dark" id="depoimento">
+    <div class="wrap quote">
+      <span class="mark" aria-hidden="true">“</span>
+      <blockquote id="q">Buscávamos muito mais do que um salão. Encontramos tudo isso em um só lugar.</blockquote>
+      <cite>Shine Secrets 2026<span class="sub">Encontro com 120 mulheres realizado na Di Iorio Eventos</span></cite>
+      <div class="strip">
+        <button class="ph" data-lb="5" aria-label="Ampliar foto do salão decorado"><img src="img/salao2.jpg" alt="Salão decorado com painel floral, mezanino e mesas redondas" loading="lazy"></button>
+        <button class="ph" data-lb="2" aria-label="Ampliar foto de mesa posta"><img src="img/mesa.jpg" alt="Detalhe de mesa posta com flores e velas" loading="lazy"></button>
+        <button class="ph" data-lb="0" aria-label="Ampliar foto do salão montado"><img src="img/salao.jpg" alt="Vista geral do salão com mesas montadas" loading="lazy"></button>
+        <button class="ph" data-lb="1" aria-label="Ampliar foto do salão vazio"><img src="img/espaco-vazio.jpg" alt="Salão vazio pronto para montagem" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORÇAMENTO -->
+  <section class="s" id="orcamento">
+    <div class="wrap book">
+      <div>
+        <p class="eyebrow">Reservas</p>
+        <h2>Consulte sua data <em>em um minuto</em></h2>
+        <p class="lead">Preencha ao lado e a mensagem chega pronta no WhatsApp da Di Iorio. É só enviar.</p>
+        <ol class="steps">
+          <li><div><b>Mande sua data</b><span>Conte o tipo de evento e quantos convidados espera.</span></div></li>
+          <li><div><b>Agende uma visita</b><span>Venha ver o salão pessoalmente, sem compromisso.</span></div></li>
+          <li><div><b>Garanta a reserva</b><span>Confirmou, a data é sua. Agora é só planejar a festa.</span></div></li>
+        </ol>
+      </div>
+      <form class="card" id="form" novalidate>
+        <h3>Pedido de orçamento</h3>
+        <p class="hint">Respondemos pelo WhatsApp (35) 99162-7080.</p>
+        <div class="field"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" autocomplete="name" required><span class="err" aria-live="polite"></span></div>
+        <div class="row">
+          <div class="field"><label for="f-tipo">Tipo de evento</label>
+            <select id="f-tipo" name="tipo" required>
+              <option value="">Escolha</option>
+              <option>Aniversário</option><option>Casamento</option><option>Festa infantil</option><option>Confraternização</option><option>Evento corporativo</option><option>Chá / encontro</option><option>Outro</option>
+            </select><span class="err" aria-live="polite"></span></div>
+          <div class="field"><label for="f-data">Data desejada</label><input id="f-data" name="data" type="date"><span class="err"></span></div>
+        </div>
+        <div class="field"><label for="f-conv">Número de convidados</label><input id="f-conv" name="conv" type="number" min="1" inputmode="numeric" placeholder="Ex.: 100"><span class="err"></span></div>
+        <div class="field"><label for="f-obs">Algo mais? (opcional)</label><textarea id="f-obs" name="obs" placeholder="Horário, se vai ter buffet, decoração…"></textarea></div>
+        <a class="btn" id="send" href="https://wa.me/5535991627080"><svg aria-hidden="true"><use href="#i-wa"/></svg>Enviar pelo WhatsApp</a>
+        <p class="fine">Abre o WhatsApp com a mensagem pronta. Nada é enviado sem você tocar em enviar.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- COMO CHEGAR -->
+  <section class="s dark dark-2" id="chegar">
+    <div class="wrap visit">
+      <div>
+        <p class="eyebrow">Como chegar</p>
+        <p class="addr">Av. Alferes Manoel Caetano do Nascimento, 485<small>Jardim Vitória II · São Sebastião do Paraíso – MG · CEP 37950-398</small></p>
+        <ul class="visit-list">
+          <li><svg aria-hidden="true"><use href="#i-car"/></svg>Fácil acesso e estacionamento no local</li>
+          <li><svg aria-hidden="true"><use href="#i-cal"/></svg>Visitas com horário marcado pelo WhatsApp</li>
+          <li><svg aria-hidden="true"><use href="#i-ig"/></svg><a class="link" href="https://www.instagram.com/di_iorioeventos.ssp/">@di_iorioeventos.ssp</a></li>
+        </ul>
+        <div class="visit-actions">
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Av.+Alferes+Manoel+Caetano+do+Nascimento,+485,+Jardim+Vit%C3%B3ria+II,+S%C3%A3o+Sebasti%C3%A3o+do+Para%C3%ADso+-+MG"><svg aria-hidden="true"><use href="#i-map"/></svg>Abrir no Google Maps</a>
+          <a class="btn ghost wa-link" data-msg="Olá! Quero agendar uma visita para conhecer a Di Iorio Eventos." href="https://wa.me/5535991627080">Agendar visita</a>
+        </div>
+      </div>
+      <button class="ph" data-lb="6" aria-label="Ampliar foto da fachada"><img src="img/fachada.jpg" alt="Fachada da Di Iorio Eventos com grade preta e plantas na entrada" loading="lazy"></button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="#topo" aria-label="Di Iorio Eventos — voltar ao topo">
+        <svg class="mono" style="color:var(--gold)" aria-hidden="true"><use href="#i-mono"/></svg>
+        <span><b>DI IORIO</b><small>Eventos</small></span>
+      </a>
+      <p>Transformando momentos em memórias inesquecíveis.</p>
+    </div>
+    <div>
+      <h4>Contato</h4>
+      <ul>
+        <li><a class="link wa-link" href="https://wa.me/5535991627080">WhatsApp (35) 99162-7080</a></li>
+        <li><a class="link" href="https://www.instagram.com/di_iorioeventos.ssp/">Instagram @di_iorioeventos.ssp</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Endereço</h4>
+      <p>Av. Alferes Manoel Caetano do Nascimento, 485<br>Jardim Vitória II<br>São Sebastião do Paraíso – MG</p>
+    </div>
+    <div class="legal"><span>© 2026 Di Iorio Eventos</span><span>Site por AYO Marketing Integrado</span></div>
+  </div>
+</footer>
+
+<a class="wa-float wa-link" href="https://wa.me/5535991627080" aria-label="Falar no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Galeria de fotos">
+  <img id="lb-img" alt="">
+  <button class="x" id="lb-x" aria-label="Fechar galeria"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+  <button class="pv" id="lb-pv" aria-label="Foto anterior"><svg aria-hidden="true"><use href="#i-left"/></svg></button>
+  <button class="nx" id="lb-nx" aria-label="Próxima foto"><svg aria-hidden="true" style="transform:scaleX(-1)"><use href="#i-left"/></svg></button>
+</div>
+
+<script>
+(()=>{
+  const WA='5535991627080';
+  const waURL=m=>'https://wa.me/'+WA+'?text='+encodeURIComponent(m);
+  const def='Olá! Vi o site da Di Iorio Eventos e quero consultar uma data.';
+  document.querySelectorAll('.wa-link').forEach(a=>{ if(a.getAttribute('href').startsWith('https://wa.me')) a.href=waURL(a.dataset.msg||def); });
+
+  // nav
+  const nav=document.getElementById('nav');
+  const onScroll=()=>nav.classList.toggle('solid',scrollY>40);
+  onScroll(); addEventListener('scroll',onScroll,{passive:true});
+  const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  const setMenu=o=>{menu.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Fechar menu':'Abrir menu');document.body.style.overflow=o?'hidden':''};
+  burger.addEventListener('click',()=>setMenu(!menu.classList.contains('open')));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+
+  // form → WhatsApp
+  const f=document.getElementById('form'),send=document.getElementById('send');
+  const v=id=>document.getElementById(id).value.trim();
+  const fmt=d=>{if(!d)return'';const[y,m,dd]=d.split('-');return dd+'/'+m+'/'+y};
+  const build=()=>{
+    let m='Olá! Gostaria de um orçamento na Di Iorio Eventos.';
+    if(v('f-nome')) m+='\n\nNome: '+v('f-nome');
+    if(v('f-tipo')) m+='\nEvento: '+v('f-tipo');
+    if(v('f-data')) m+='\nData: '+fmt(v('f-data'));
+    if(v('f-conv')) m+='\nConvidados: '+v('f-conv');
+    if(v('f-obs')) m+='\nObs.: '+v('f-obs');
+    send.href=waURL(m);
+  };
+  f.addEventListener('input',build); build();
+  const check=(id,msg)=>{const el=document.getElementById(id),wrap=el.closest('.field'),ok=!!el.value.trim();wrap.classList.toggle('bad',!ok);wrap.querySelector('.err').textContent=ok?'':msg;return ok};
+  send.addEventListener('click',e=>{
+    const a=check('f-nome','Diga seu nome para a gente saber com quem fala.'),b=check('f-tipo','Escolha o tipo de evento.');
+    if(!(a&&b)){e.preventDefault();(a?document.getElementById('f-tipo'):document.getElementById('f-nome')).focus()}
+  });
+  f.addEventListener('submit',e=>{e.preventDefault();send.click()});
+
+  // lightbox
+  const photos=[
+    ['img/salao.jpg','Salão montado com mesas redondas'],
+    ['img/espaco-vazio.jpg','Salão vazio'],
+    ['img/mesa.jpg','Mesa posta'],
+    ['img/kids.jpg','Área kids'],
+    ['img/lounge.jpg','Lounge privativo'],
+    ['img/salao2.jpg','Salão decorado com mezanino'],
+    ['img/fachada.jpg','Fachada']
+  ];
+  const lb=document.getElementById('lb'),li=document.getElementById('lb-img');let cur=0,last=null;
+  const show=i=>{cur=(i+photos.length)%photos.length;li.src=photos[cur][0];li.alt=photos[cur][1]};
+  const open=i=>{last=document.activeElement;show(i);lb.classList.add('open');document.body.style.overflow='hidden';document.getElementById('lb-x').focus()};
+  const close=()=>{lb.classList.remove('open');document.body.style.overflow='';last&&last.focus()};
+  document.querySelectorAll('[data-lb]').forEach(b=>b.addEventListener('click',()=>open(+b.dataset.lb)));
+  document.getElementById('lb-x').onclick=close;
+  document.getElementById('lb-pv').onclick=()=>show(cur-1);
+  document.getElementById('lb-nx').onclick=()=>show(cur+1);
+  lb.addEventListener('click',e=>{if(e.target===lb)close()});
+  addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+
+  // type moment: quote words light up as the section scrolls through
+  const q=document.getElementById('q');
+  q.innerHTML=q.textContent.split(' ').map(w=>'<span class="w">'+w+'</span>').join(' ');
+  const words=[...q.querySelectorAll('.w')];
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){words.forEach(w=>w.classList.add('on'))}else{
+    const tick=()=>{const r=q.getBoundingClientRect(),vh=innerHeight;const p=Math.min(1,Math.max(0,(vh*.85-r.top)/(vh*.5)));const n=Math.round(p*words.length);words.forEach((w,i)=>w.classList.toggle('on',i<n))};
+    tick();addEventListener('scroll',tick,{passive:true});
+  }
+})();
+</script>
+</body>
+</html>
